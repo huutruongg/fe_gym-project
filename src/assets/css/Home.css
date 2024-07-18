@@ -1,0 +1,40 @@
+.hero-section {
+    background-color: #f4f4f4;
+    padding-top: 180px;
+    padding-bottom: 100px;
+  }
+
+  .container .main-content {
+    display: flex;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 64px;
+    color: #d85f30;
+    margin-bottom: 20px;
+  }
+  
+  .hero-description {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 30px;
+  }
+  
+  .get-started-btn {
+    width: 200px;
+    height: 48px;
+    background-color: #2a75e6;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }

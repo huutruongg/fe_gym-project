@@ -1,0 +1,27 @@
+.meal-plan_container {
+    font-family: Arial, sans-serif; 
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .meal-plan_container h1, .meal-plan_container h2, .meal-plan_container h3 {
+    color: #333;
+  }
+  
+  .meal-plan_container ul {
+    list-style-type: disc; 
+    margin-left: 40px; 
+  }
+  
+  .meal-plan_container li {
+    margin-bottom: 10px;
+  }
+
+  .meal-plan_container .meal-plan_title {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+
+  /* Video Container */
+  .video-container {
+    display: flex;  /* Sử dụng flexbox để canh lề video và description */
+    gap: 20px;      /* Khoảng cách giữa video và description */
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    max-width: 1880px;  /* Giữ nguyên chiều rộng video */
+    height: 1000px;     /* Giữ nguyên chiều cao video  */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;  /* Thêm border-radius */
+  }
+  

@@ -1,0 +1,42 @@
+.blog-section {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: 1;
+}
+
+.blog-card {
+    display: flex;
+    background-color: rgb(175, 166, 166);
+    border: 2px solid white;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.blog-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.blog-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.blog-content {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.blog-date {
+    font-size: 14px;
+    color: #606060;
+}

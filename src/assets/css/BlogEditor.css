@@ -1,0 +1,55 @@
+.editor-section {
+    height: auto;
+    padding: 20px;
+    background-color: f4f4f4;
+
+}
+
+.re-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-input h3 {
+    margin-bottom: 10px;
+    color: #212529;
+    /* Dark gray heading color */
+}
+
+.blog-input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.blog-input input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.editor-wrapper {
+    border: 1px solid #ced4da;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.editor {
+    min-height: 450px;
+}
+
+.submit-blog {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: #007bff;
+    /* Blue button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
