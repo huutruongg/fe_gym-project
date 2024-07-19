@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactMarkdown from 'react-markdown';
 import { useLocation } from 'react-router-dom';
 import '../assets/css/MealPlan.css'
@@ -6,6 +6,9 @@ import '../assets/css/MealPlan.css'
 function MealPlan() {
     const location = useLocation(); 
     const mealPlan = location.state?.mealPlan || '';
+    useEffect(() => {
+        document.title = "Thực đơn gợi ý"; 
+      }, []); 
     return (
         <div className='meal-plan_container'>
             <h2 className='meal-plan_title'>MỘT SỐ GỢI Ý VỀ DINH DƯỠNG</h2>

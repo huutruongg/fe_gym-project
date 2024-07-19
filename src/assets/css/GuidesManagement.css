@@ -1,0 +1,98 @@
+.guide-management {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.add-new-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.add-new-button:hover {
+  background-color: #218838;
+}
+
+.list-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.guide-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.guide-table th,
+.guide-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.guide-table th {
+  background-color: #f2f2f2;
+}
+
+.guide-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.edit-button,
+.delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #007bff;
+  color: white;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.back-button {
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  width: 120px;
+}
+
+.back-button a {
+  text-decoration: none;
+  color: rgb(117, 13, 13);
+}

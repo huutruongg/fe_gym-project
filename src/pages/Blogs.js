@@ -7,6 +7,7 @@ function Blogs() {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
+        document.title = "Blogs";
         axios.get('http://localhost:5000/blogs')
             .then((response) => setBlogs(response.data))
             .catch((e) => console.log(e));

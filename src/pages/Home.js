@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../assets/css/Home.css';
 import img_intro from '../assets/images/bg-gym1.png'
 
 function Home() {
+  useEffect(() => {
+    document.title = "Trang chủ"; 
+  }, []); 
   return (
     <div>
       <section className="hero-section">

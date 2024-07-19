@@ -1,0 +1,85 @@
+.blog-management {
+    padding: 20px;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .add-new-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-new-button:hover {
+    background-color: #218838; /* Màu xanh đậm hơn khi hover */
+  }
+  
+  .list-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .blog-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .blog-table th,
+  .blog-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .blog-table th {
+    background-color: #f2f2f2; /* Màu xám nhạt cho phần header */
+  }
+  
+  .blog-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Màu xám rất nhạt cho các dòng chẵn */
+  }
+  
+  .actions-cell {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .edit-button,
+  .delete-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+    margin-right: 5px;
+    text-decoration: none;
+  }
+  
+  .delete-button {
+    background-color: #dc3545; /* Màu đỏ */
+    color: white;
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3; /* Màu xanh đậm hơn khi hover */
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333; /* Màu đỏ đậm hơn khi hover */
+  }

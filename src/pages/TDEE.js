@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../assets/css/Tdee.css'
 import ModalResult from '../components/ModalResult';
 
 function TDEE() {
+  useEffect(() => {
+    document.title = "Tính TDEE";
+  }, []);
+
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     gender: '',

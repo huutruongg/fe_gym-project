@@ -1,0 +1,43 @@
+.admin-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 120px); /* Giả sử header và footer cao 60px */
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  .content-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .admin-buttons {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .admin-button {
+    padding: 15px 30px;
+    border: 2px solid none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .video-button {
+    background-color: #f00; /* Màu đỏ cho button Video */
+    color: white;
+  }
+  
+  .blog-button {
+    background-color: #00f; /* Màu xanh cho button Blog */
+    color: white;
+  }
+  
+  .admin-button:hover {
+    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }

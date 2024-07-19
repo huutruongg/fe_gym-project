@@ -13,6 +13,7 @@ function Guides() {
     }])
 
     useEffect(() => {
+        document.title = "Guides";
         axios.get('http://localhost:5000/guides')
             .then((response) => setGuides(response.data))
             .catch((e) => console.log(e))
