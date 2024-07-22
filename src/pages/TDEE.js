@@ -2,23 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../assets/css/Tdee.css'
 import ModalResult from '../components/ModalResult';
+import { CircularProgress } from '@mui/material';
 
 function TDEE() {
   useEffect(() => {
     document.title = "Tính TDEE";
   }, []);
 
+  const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({
-    gender: '',
-    age: 0,
-    height: 0,
-    weight: 0,
-    intensity: '',
-    goal: '',
-    level: '',
-    expected: ''
-  });
+  const [formData, setFormData] = useState({});
 
   const [results, setResults] = useState({
     bmr: '',
@@ -48,15 +41,35 @@ function TDEE() {
     })
   }
 
-  const handleSubmit = () => {
-    // Calculate TDEE here or send data to Flask backend
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    if (
+      !formData.gender ||
+      !formData.age ||
+      !formData.height ||
+      !formData.weight ||
+      !formData.intensity ||
+      !formData.goal ||
+      !formData.level ||
+      (formData.goal === "giảm cân" && !formData.expected)
+    ) {
+      alert('Vui lòng nhập đầy đủ thông tin!');
+      return; 
+    }
+
+    setIsLoading(true); 
+
     axios.post('http://localhost:5000/get_diet_plan', formData)
       .then(response => {
         setResults(response.data);
         setShowModal(true);
       })
       .catch(error => {
-        console.error('There was an error!', error);
+        console.error('Có lỗi xảy ra!', error);
+      })
+      .finally(() => {
+        setIsLoading(false); 
       });
   };
   const handleCloseModal = () => setShowModal(false);
@@ -65,10 +78,10 @@ function TDEE() {
     <div className="tdee-section">
       <div className='container'>
         <div className="form-container">
-          <form>
+          <form onSubmit={handleSubmit}>
             <label>
               Giới tính:
-              <select name="gender" value={formData.gender} onChange={handleChange}>
+              <select name="gender" value={formData.gender} onChange={handleChange} required>
                 <option value="">...</option>
                 <option value="nam">Nam</option>
                 <option value="nữ">Nữ</option>
@@ -83,6 +96,7 @@ function TDEE() {
                 value={formData.age}
                 onChange={handleChange}
                 placeholder="năm"
+                required
               />
             </label>
             <br />
@@ -94,6 +108,7 @@ function TDEE() {
                 value={formData.height}
                 onChange={handleChange}
                 placeholder="cm"
+                required
               />
             </label>
             <br />
@@ -105,12 +120,13 @@ function TDEE() {
                 value={formData.weight}
                 onChange={handleChange}
                 placeholder="kg"
+                required
               />
             </label>
             <br />
             <label>
               Cường độ tập luyện:
-              <select name="intensity" value={formData.intensity} onChange={handleChange}>
+              <select name="intensity" value={formData.intensity} onChange={handleChange} required>
                 <option value="">...</option>
                 <option value="ít vận động">Ít vận động</option>
                 <option value="vận động nhẹ">Vận động nhẹ</option>
@@ -122,7 +138,7 @@ function TDEE() {
             <br />
             <label>
               Mục tiêu của bạn:
-              <select name="goal" value={formData.goal} onChange={handleChange}>
+              <select name="goal" value={formData.goal} onChange={handleChange} required>
                 <option value="">...</option>
                 <option value="giảm cân">Giảm cân</option>
                 <option value="duy trì">Duy trì</option>
@@ -145,7 +161,7 @@ function TDEE() {
                 <br />
                 <label>
                   Bạn muốn tăng cân thế nào?:
-                  <select name="level" value={formData.level} onChange={handleChange}>
+                  <select name="level" value={formData.level} onChange={handleChange} required>
                     <option value="">...</option>
                     <option value="chậm">Chậm</option>
                     <option value="bình thường">Bình thường</option>
@@ -158,7 +174,7 @@ function TDEE() {
             {formData.goal !== "giảm cân" && (
               <label>
                 Bạn muốn tăng cân thế nào?:
-                <select name="level" value={formData.level} onChange={handleChange}>
+                <select name="level" value={formData.level} onChange={handleChange} required>
                   <option value="">...</option>
                   <option value="chậm">Chậm</option>
                   <option value="bình thường">Bình thường</option>
@@ -167,11 +183,16 @@ function TDEE() {
               </label>
             )}
             <br />
-            <button type="button" onClick={handleSubmit}>Tính TDEE</button>
+            <button type="submit">Tính TDEE</button>
           </form>
           <div className='reset'>
             <span onClick={handleReset}>Làm mới</span>
           </div>
+          {isLoading && (
+            <div className="loading-overlay">
+              <CircularProgress className="loading-spinner" />
+            </div>
+          )}
           <ModalResult show={showModal} handleClose={handleCloseModal} results={results} />
         </div>
         <div className="description">
